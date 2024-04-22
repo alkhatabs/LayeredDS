@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Manage Entities</title>
+</h:head>
+<h:body>
+    <h1>Manage Entities</h1>
+    
+    <!-- Add Freelancer Form -->
+    <h:form>
+        <h3>Add Freelancer</h3>
+        <h:outputLabel for="freelancerName" value="Name:" />
+        <h:inputText id="freelancerName" value="#{adminManageEntitiesController.freelancerName}" />
+        
+        <h:outputLabel for="freelancerSkills" value="Skills:" />
+        <h:inputTextarea id="freelancerSkills" value="#{adminManageEntitiesController.freelancerSkills}" />
+
+        <h:outputLabel for="freelancerMessage" value="Message:" />
+        <h:inputTextarea id="freelancerMessage" value="#{adminManageEntitiesController.freelancerMessage}" />
+
+        <h:commandButton value="Add Freelancer" action="#{adminManageEntitiesController.addFreelancer}" />
+    </h:form>
+    
+    <!-- Remove Freelancer Form -->
+    <h:form>
+        <h3>Remove Freelancer</h3>
+        <h:outputLabel for="freelancerId" value="Freelancer ID:" />
+        <h:inputText id="freelancerId" value="#{adminManageEntitiesController.freelancerIdToRemove}" />
+        
+        <h:commandButton value="Remove Freelancer" action="#{adminManageEntitiesController.removeFreelancer}" />
+    </h:form>
+    
+    <!-- Add Job Form -->
+    <h:form>
+        <h3>Add Job</h3>
+        <h:outputLabel for="jobTitle" value="Title:" />
+        <h:inputText id="jobTitle" value="#{adminManageEntitiesController.jobTitle}" />
+        
+        <h:outputLabel for="jobKeywords" value="Keywords:" />
+        <h:inputText id="jobKeywords" value="#{adminManageEntitiesController.jobKeywords}" />
+        
+        <h:outputLabel for="jobDescription" value="Description:" />
+        <h:inputTextarea id="jobDescription" value="#{adminManageEntitiesController.jobDescription}" />
+        
+        <h:outputLabel for="jobPaymentOffer" value="Payment Offer:" />
+        <h:inputText id="jobPaymentOffer" value="#{adminManageEntitiesController.jobPaymentOffer}" />
+        
+        <h:commandButton value="Add Job" action="#{adminManageEntitiesController.addJob}" />
+    </h:form>
+    
+    <!-- Remove Job Form -->
+    <h:form>
+        <h3>Remove Job</h3>
+        <h:outputLabel for="jobId" value="Job ID:" />
+        <h:inputText id="jobId" value="#{adminManageEntitiesController.jobIdToRemove}" />
+        
+        <h:commandButton value="Remove Job" action="#{adminManageEntitiesController.removeJob}" />
+    </h:form>
+    
+    <!-- Add Provider Form -->
+    <h:form>
+        <h3>Add Provider</h3>
+        <h:outputLabel for="providerName" value="Name:" />
+        <h:inputText id="providerName" value="#{adminManageEntitiesController.providerName}" />
+        
+        <h:outputLabel for="providerEmail" value="Email:" />
+        <h:inputText id="providerEmail" value="#{adminManageEntitiesController.providerEmail}" />
+        
+        <h:outputLabel for="providerPassword" value="Password:" />
+        <h:inputSecret id="providerPassword" value="#{adminManageEntitiesController.providerPassword}" />
+        
+        <h:commandButton value="Add Provider" action="#{adminManageEntitiesController.addProvider}" />
+    </h:form>
+    
+    <!-- Remove Provider Form -->
+    <h:form>
+        <h3>Remove Provider</h3>
+        <h:outputLabel for="providerId" value="Provider ID:" />
+        <h:inputText id="providerId" value="#{adminManageEntitiesController.providerIdToRemove}" />
+        
+        <h:commandButton value="Remove Provider" action="#{adminManageEntitiesController.removeProvider}" />
+    </h:form>
+</h:body>
+</html>
+

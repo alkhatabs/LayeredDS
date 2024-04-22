@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Browse Jobs</title>
+</h:head>
+<h:body>
+    <h1>Browse Jobs</h1>
+    <h:form>
+        <h:outputLabel for="keyword" value="Search by Keyword:" />
+        <h:inputText id="keyword" value="#{freelancerController.keyword}" />
+        <h:commandButton value="Search" action="#{freelancerController.searchByKeyword}" />
+    </h:form>
+
+    <h:form>
+        <h:dataTable value="#{freelancerController.browseJobOffers()}" var="job">
+            <h:column>
+                <f:facet name="header">Title</f:facet>
+                #{job.title}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Description</f:facet>
+                #{job.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Payment Offer</f:facet>
+                #{job.paymentOffer}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Action</f:facet>
+                <h:commandButton value="Offer to Undertake Job" action="#{freelancerController.offerToUndertakeJob(job)}" />
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>View Freelancer</title>
+</h:head>
+<h:body>
+    <ui:include src="/templates/header.xhtml"/>
+    <div id="content">
+        <h2>View Freelancer</h2>
+        <h:outputText value="Name: #{freelancerController.freelancer.name}" /><br/>
+        <h:outputText value="ID: #{freelancerController.freelancer.id}" /><br/>
+        <h:outputText value="Skills: #{freelancerController.freelancer.skills}" /><br/>
+        <h:outputText value="Message to Job Requestors: #{freelancerController.freelancer.message}" /><br/>
+        <h:outputText value="Payment Amount: #{freelancerController.paymentAmount}" /><br/>
+    </div>
+    <ui:include src="/templates/footer.xhtml"/>
+</h:body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Offer to Undertake Job</title>
+</h:head>
+<h:body>
+    <h1>Offer to Undertake Job</h1>
+    <h:form>
+        <h:outputLabel for="jobId" value="Enter Job ID:" />
+        <h:inputText id="jobId" value="#{offerToUndertakeController.jobId}" />
+        <h:commandButton value="Offer to Undertake" action="#{offerToUndertakeController.offerToUndertake}" />
+    </h:form>
+
+    <h:messages globalOnly="true" />
+</h:body>
+</html>
