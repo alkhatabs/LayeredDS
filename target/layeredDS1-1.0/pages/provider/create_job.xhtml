@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>Create Job</title>
+</h:head>
+<h:body>
+    <ui:include src="/templates/header.xhtml"/>
+    <div id="content">
+        <h2>Create Job</h2>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="title">Title:</h:outputLabel>
+                <h:inputText id="title" value="#{jobController.title}" required="true" />
+                <h:outputLabel for="keywords">Keywords:</h:outputLabel>
+                <h:inputText id="keywords" value="#{jobController.keywords}" required="true" />
+                <h:outputLabel for="description">Description:</h:outputLabel>
+                <h:inputTextarea id="description" value="#{jobController.description}" rows="6" cols="30" required="true" />
+                <h:outputLabel for="paymentOffer">Payment Offer:</h:outputLabel>
+                <h:inputText id="paymentOffer" value="#{jobController.paymentOffer}" required="true" />
+            </h:panelGrid>
+            <h:commandButton value="Create Job" action="#{jobController.createJob}" />
+        </h:form>
+    </div>
+    <ui:include src="/templates/footer.xhtml"/>
+</h:body>
+</html>

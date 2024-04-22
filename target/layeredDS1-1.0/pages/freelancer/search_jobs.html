@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Search Jobs</title>
+</h:head>
+<h:body>
+    <h1>Search Jobs</h1>
+    <h:form>
+        <h:outputLabel for="keyword" value="Enter Keyword:" />
+        <h:inputText id="keyword" value="#{jobSearchController.keyword}" />
+        <h:commandButton value="Search" action="#{jobSearchController.searchByKeyword}" />
+    </h:form>
+
+    <h:form rendered="#{not empty jobSearchController.searchResults}">
+        <h2>Search Results</h2>
+        <h:dataTable value="#{jobSearchController.searchResults}" var="job">
+            <h:column>
+                <f:facet name="header">Title</f:facet>
+                #{job.title}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Description</f:facet>
+                #{job.description}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Payment Offer</f:facet>
+                #{job.paymentOffer}
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
+    <h:messages globalOnly="true" />
+</h:body>
+</html>
